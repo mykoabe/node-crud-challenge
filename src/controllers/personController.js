@@ -5,7 +5,7 @@ const validatePersonData = require("../validators/personValidator");
 
 /**
  * @description Get all persons
- * @route GET /api/v1/persons
+ * @route GET /person
  */
 const getAllPersons = asyncAwaitHandler((req, res) => {
   const persons = req.app.get("db");
@@ -14,7 +14,7 @@ const getAllPersons = asyncAwaitHandler((req, res) => {
 
 /**
  * @description Get a person by ID
- * @route GET /api/v1/persons/:id
+ * @route GET /person/:id
  */
 const getPerson = asyncAwaitHandler((req, res, next) => {
   const { id } = req.params;
@@ -30,7 +30,7 @@ const getPerson = asyncAwaitHandler((req, res, next) => {
 
 /**
  * @description Create a person
- * @route POST /api/v1/persons
+ * @route POST /person
  */
 const createPerson = asyncAwaitHandler((req, res, next) => {
   // Validate input data
@@ -55,7 +55,7 @@ const createPerson = asyncAwaitHandler((req, res, next) => {
 
 /**
  * @description Update a person
- * @route PUT /api/v1/persons/:id
+ * @route PUT /persons/:id
  */
 const updatePerson = asyncAwaitHandler((req, res, next) => {
   const { id } = req.params;
@@ -82,7 +82,7 @@ const updatePerson = asyncAwaitHandler((req, res, next) => {
 
 /**
  * @description Delete a person
- * @route DELETE /api/v1/persons/:id
+ * @route DELETE /person/:id
  */
 const deletePerson = asyncAwaitHandler((req, res, next) => {
   const { id } = req.params;

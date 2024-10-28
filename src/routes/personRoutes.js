@@ -11,7 +11,7 @@ const {
 // Routes
 router.route("/").get(getAllPersons).post(createPerson);
 router
-  .route("/:personId")
+  .route("/:id")
   .get(getPerson)
   .put(updatePerson)
   .delete(deletePerson);

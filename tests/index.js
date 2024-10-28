@@ -35,7 +35,7 @@ describe("Test Person CRUD API", function () {
         }
 
         let res = await axios.post('http://localhost:3000/person', newUser)
-        assert.equal(res.status, 200)
+        assert.equal(res.status, 201)
         let persons = app.get('db')
         let insertedUser = Object.assign({}, persons[1])
         delete insertedUser.id
